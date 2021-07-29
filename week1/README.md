@@ -51,7 +51,7 @@ Union is too expensive. It takes $N^2$ array accesses to process a sequence of N
 - Union: takes constant time, given roots.
 #### Proposition
 Depth of any node x is at most lg N.
-- proof
+- proof  
 Increases by 1 when tree T1 containing x is merged into another tree T2.
 -> The size of the tree containing x at least doubles since | T 2 | ≥ | T 1 |
 ### #2 Path compression
@@ -77,8 +77,17 @@ private int root(int i){
 | weighted QU | N + M log N |
 | QU + path compression | N + M log N |
 | weighted QU + path compression | N + M log N |
+
 *M union-find operations on a set of N objects
 
 ## Union Find Application 
+### Percolation(滲透)
+![image](https://www.cs.princeton.edu/courses/archive/spring11/cos226/assignments/percolates.png)
+A model for many physical systems:
+- N-by-N grid of sites.
+- Each site is open with probability p (or blocked with probability 1 – p).
+- System percolates iff top and bottom are connected by open sites.
 
-
+When N is large, theory guarantees a ==sharp threshold== p*
+- p > p* : almost certainly percolates.
+- p < p* : almost certainly does not percolate.

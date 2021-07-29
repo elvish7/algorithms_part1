@@ -30,6 +30,17 @@ Also called eager approach.
 Union is too expensive. It takes $N^2$ array accesses to process a sequence of N union commands on N objects.
 (need to go through all objects)
 ## Quick Union
+- Integer array id[] of length N.
+- Interpretation: id[i] is parent of i.
+- **Root** of i is id[id[id[...id[i]...]]]. (keep going until it doesn’t change)
+### Cost model
+|  algorithm   | initialize  | union  | find  |
+|  ----  | ----  | ----  | ----  |
+| quick-find | N | N | 1 |
+| quick-union | N | N | N |
+
+- find is expensive
+- could have tall trees
 ## Quick Union Improvement
 ## Union Find Application 
 

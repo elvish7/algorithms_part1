@@ -42,6 +42,43 @@ Union is too expensive. It takes $N^2$ array accesses to process a sequence of N
 - find is expensive
 - could have tall trees
 ## Quick Union Improvement
+### #1 Weighted quick-union
+- Modify quick-union to avoid tall trees.
+- Keep track of size of each tree (number of objects).
+- Balance by **linking root of smaller tree to root of larger tree**.
+#### Running time.
+- Find: takes time proportional to depth of p and q.
+- Union: takes constant time, given roots.
+#### Proposition
+Depth of any node x is at most lg N.
+- proof
+Increases by 1 when tree T1 containing x is merged into another tree T2.
+-> The size of the tree containing x at least doubles since | T 2 | ≥ | T 1 |
+### #2 Path compression
+Just after computing the root of p, set the id of each examined node to point to that root.
+- Simpler one-pass variant
+Make every other node in path point to its grandparent (thereby halving path length).
+To implement, there's only one extra line of code needed:
+```
+private int root(int i){
+	while (i != id[i]){
+		id[i] = id[id[i]];
+		i = id[i];
+	}
+	return i;
+}
+
+```
+### Comparison
+|  algorithm   | worst-case time  |
+|  ----  | ----  |
+| quick-find | M N |
+| quick-union | M N |
+| weighted QU | N + M log N |
+| QU + path compression | N + M log N |
+| weighted QU + path compression | N + M log N |
+*M union-find operations on a set of N objects
+
 ## Union Find Application 
 
 

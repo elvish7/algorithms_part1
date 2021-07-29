@@ -18,6 +18,17 @@ Maximal set of objects that are mutually connected.
 ex. {1}, {2, 5}, {3, 4, 6, 7}
 
 ## Quick Find
+Also called eager approach.
+- Find: Check if p and q have the same id.
+- Union: To merge components containing p and q, change all entries whose id equals id[p] to id[q].
+
+### Cost model
+|  algorithm   | initialize  | union  | find  |
+|  ----  | ----  | ----  | ----  |
+| quick-find | N | N |1 |
+
+Union is too expensive. It takes $N^2$ array accesses to process a sequence of N union commands on N objects.
+(need to go through all objects)
 ## Quick Union
 ## Quick Union Improvement
 ## Union Find Application 

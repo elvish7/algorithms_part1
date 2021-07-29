@@ -82,12 +82,13 @@ private int root(int i){
 
 ## Union Find Application 
 ### Percolation(滲透)
-![image](https://www.cs.princeton.edu/courses/archive/spring11/cos226/assignments/percolates.png)
+![image](https://www.cs.princeton.edu/courses/archive/spring11/cos226/assignments/percolates.png)  
+
 A model for many physical systems:
 - N-by-N grid of sites.
 - Each site is open with probability p (or blocked with probability 1 – p).
 - System percolates iff top and bottom are connected by open sites.
 
-When N is large, theory guarantees a ==sharp threshold== p*
+When N is large, theory guarantees a __sharp threshold__ p*
 - p > p* : almost certainly percolates.
 - p < p* : almost certainly does not percolate.
